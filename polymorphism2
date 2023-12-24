@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class base{
+    public:
+    virtual void input() {
+        cout<<"This is derived from the base class"<<endl;
+    }
+    void output() {
+        cout<<"This is a base class"<<endl;
+    }
+};
+
+class derived:public base{
+    public:
+    void input() {
+        cout<<"This is a derived class"<<endl;
+    }
+    void output() {
+        cout<<"It is a derived class"<<endl;
+    }
+};
+
+int main() {
+    base *baseptr;
+    derived d;
+    baseptr=&d;
+    baseptr->input();
+    baseptr->output();
+    return 0;
+}
