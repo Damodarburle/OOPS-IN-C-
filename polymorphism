@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+class animal{
+  public:  
+  virtual void type(){
+      cout<<"all animals eat meat and grass"<<endl;
+   }
+};
+class herbivores:public animal{
+    public:
+    
+    void type()override{
+        cout<<"herbivores eat grass"<<endl;
+    }
+};
+class carnivores:public animal{
+    public:
+    void type()override{
+        cout<<"carnivores eat meat"<<endl;
+    }
+};
+int main(){
+    animal a;
+    herbivores h;
+    carnivores c;
+    
+    animal *ptr;
+    ptr=&h;
+    ptr->type();
+
+}
