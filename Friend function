@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+class box{
+    private:
+    int length;
+    int height;
+    int breadth;
+    
+    public:
+    void input();
+    friend void get(box);
+};
+
+void box::input() {
+    length=10;
+    height=20;
+    breadth=30;
+}
+
+void get(box a){
+    cout<<a.length<<endl;
+    cout<<a.height<<endl;
+    cout<<a.breadth<<endl;
+}
+
+int main() {
+    box b;
+    b.input();
+    get(b);
+    
+    return 0;
+}
