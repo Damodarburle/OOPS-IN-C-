@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+class binary{
+    private:
+    int x;
+    int y;
+    
+    public:
+    void input(int,int);
+    void output();
+    friend binary operator+(binary,binary);
+};
+void binary::input(int a,int b) {
+    x=a;
+    y=b;
+}
+
+void binary::output() {
+    cout<<x<<endl<<y<<endl;
+}
+
+binary operator+(binary obj1,binary obj2) {
+    binary ob;
+    ob.x=obj1.x+obj2.x;
+    ob.y=obj1.y+obj2.y;
+    
+    return ob;
+}
+
+int main() {
+    binary s1,s2,s3;
+    s1.input(10,20);
+    s2.input(30,40);
+    s3=s1+s2;
+    
+    s3.output();
+}
