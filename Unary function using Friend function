@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+class unary{
+    private:
+    int x;
+    int y;
+    
+    public:
+    void input(int,int);
+    void output();
+    friend unary operator-(unary &);
+};
+
+void unary::input(int a,int b) {
+    x=a;
+    y=b;
+}
+
+void unary::output() {
+    cout<<x<<endl<<y<<endl;
+}
+
+unary operator-(unary &obj) {
+    obj.x=-obj.x;
+    obj.y=-obj.y;
+}
+
+int main() {
+    unary s;
+    s.input(10,20);
+    s.output();
+    -s;
+    s.output();
+    
+    return 0;
+}
