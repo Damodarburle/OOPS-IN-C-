@@ -1,0 +1,83 @@
+#include<iostream>
+using namespace std;
+class student{
+    private:
+    long regno;
+    char name[10];
+    char dept[10];
+    
+    public:
+    void input();
+    void output();
+};
+
+class result{
+    
+    public:
+    int marks1;
+    int marks2;
+    
+    void get();
+    void put();
+};
+
+class monkey:public student,public result{
+    private:
+    int total;
+    
+    public:
+    void in();
+    void out();
+};
+
+void student::input() {
+    cout<<"Enter the regno :"<<endl;
+    cin>>regno;
+    
+    cout<<"Enter the name :"<<endl;
+    cin>>name;
+    
+    cout<<"Enter the dept:"<<endl;
+    cin>>dept;
+}
+
+void student::output() {
+    cout<<"Regno is:"<<regno<<endl;
+    cout<<"Nmae is:"<<name<<endl;
+    cout<<"Department is:"<<dept<<endl;
+}
+
+void result::get(){
+    cout<<"Enter the Marks1:"<<endl;
+    cin>>marks1;
+    
+    cout<<"Enter the Marks2:"<<endl;
+    cin>>marks2;
+}
+
+void result::put() {
+    cout<<"Marks1 is:"<<marks1<<endl;
+    cout<<"Marks2 is:"<<marks2<<endl;
+}
+
+void monkey::in() {
+    total=marks1+marks2;
+}
+
+void monkey::out(){
+    cout<<"Total is:"<<total<<endl;
+    
+}
+
+int main() {
+    monkey m;
+    m.input();
+    m.get();
+    m.in();
+    
+    m.output();
+    m.put();
+    m.out();
+    
+    return 0;
+}
