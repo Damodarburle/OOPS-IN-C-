@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+class student{
+    private:
+    int rollno;
+    char name[50];
+    char dept[50];
+    
+    public:
+    student(){
+       cin>>rollno;
+       cin>>name;
+       cin>>dept;
+    }
+    
+    void display() {
+        cout<<rollno<<endl;
+        cout<<name<<endl;
+        cout<<dept<<endl;
+    }
+};
+
+int main() {
+    student s[2];
+    for(int i=0;i<2;i++) {
+    s[i].display();
+    }
+    return 0;
+}
