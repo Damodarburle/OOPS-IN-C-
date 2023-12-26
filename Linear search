@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n,arr[100],i,search;
+    cout<<"Enter the size of an array:"<<endl;
+    cin>>n;
+    
+    cout<<"Enter the elements into the array:"<<endl;
+    for(i=0;i<n;i++) {
+        cin>>arr[i];
+    }
+    
+    cout<<"Enter the element to be searched:"<<endl;
+    cin>>search;
+
+    for(i=0;i<n;i++) {
+        if(arr[i]==search) {
+            cout<<"The element "<<search<<" is located at"<<i+1<<" index"<<endl;
+            break;
+        }
+    }
+    
+    if(i==n) {
+        cout<<search<<" the element is not found"<<endl;
+    }
+    
+    return 0;
+}
