@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    string name;
+    cout<<"Enter the name:"<<endl;
+    getline(cin,name);
+    
+    int vcount=0;
+    int ccount=0;
+    int dcount=0;
+    int scount=0;
+    
+    for(char &ch:name) {
+        ch=tolower(ch);
+        
+        if(isalpha(ch)) {
+            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u') {
+                vcount++;
+            }
+        }
+            else if(isalpha(ch)){
+                ccount++;
+            }
+            else if(isdigit(ch)) {
+                dcount++;
+            }
+            else if(isspace(ch)) {
+                scount++;
+            }
+        }
+    cout<<"The vowels are:"<<vcount;
+    
+    return 0;
+}
