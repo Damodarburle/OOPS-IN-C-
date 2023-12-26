@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n,arr[100],i,pos,newValue;
+    
+    cout<<"Enter the size of an array:"<<endl;
+    cin>>n;
+    
+    cout<<"Enter the elements into array:"<<endl;
+    for(i=0;i<n;i++) {
+        cin>>arr[i];
+    }
+    
+    cout<<"Enter at which position the element  to be deleted:"<<endl;
+    cin>>pos;
+    
+    if(pos>0 && pos<=n) {
+        
+        for(i=pos-1;i<n-1;i++) {
+            arr[i]=arr[i+1];
+        }
+        
+        n--;
+    
+    cout<<"After Deletion:"<<endl;
+    for(i=0;i<n;i++) {
+        cout<<" "<<arr[i];
+    }
+}
+
+else {
+    cout<<"Invalid position"<<endl;
+}
+
+return 0;
+}
