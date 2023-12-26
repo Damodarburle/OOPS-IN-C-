@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+
+class Electric_Bill{
+    private:
+    string n;
+    int units;
+    double bill;
+    
+    public:
+    void accept() {
+        cout<<"Enter the name:"<<endl;
+        cin>>n;
+        
+        cout<<"Enter the units:"<<endl;
+        cin>>units;
+    }
+    
+    void calculate() {
+        if(units<=100) {
+            bill=units*2;
+        }
+        else if(units>100 && units<=200){
+            bill=units*3;
+        }
+        
+        else if(units>300) {
+            bill=units*5+(2.5/100);
+        }
+    }
+    void print() {
+        cout<<"Name of the person is:"<<n<<endl;
+        cout<<"No.of units consumed is:"<<units<<endl;
+        cout<<"Bill is:"<<bill<<endl;
+    }
+};
+
+int main(){
+    Electric_Bill obj;
+    obj.accept();
+    obj.calculate();
+    obj.print();
+    
+    return 0;
+}
