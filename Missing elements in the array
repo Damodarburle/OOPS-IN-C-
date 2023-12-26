@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n,arr[100],i;
+    cout<<"Enter the elements into array:"<<endl;
+    cin>>n;
+    
+    cout<<"Enter the elements into array:"<<endl;
+    for(i=0;i<n;i++) {
+        cin>>arr[i];
+    }
+    
+    int missing=1;
+    bool found=false;
+    
+    while(!found) {
+        found=true;
+        for(i=0;i<n;i++) {
+            if(arr[i]==missing) {
+                found=false;
+                missing++;
+            }
+        }
+    }
+    cout<<"The missing element is:"<<missing<<endl;
+    
+    return 0;
+}
